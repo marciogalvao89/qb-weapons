@@ -10,6 +10,15 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
         for k, data in pairs(RepairPoints) do
             Config.WeaponRepairPoints[k].IsRepairing = data.IsRepairing
             Config.WeaponRepairPoints[k].RepairingData = data.RepairingData
+			local StoreBlip = AddBlipForCoord(data.coords.x, data.coords.y, data.coords.z)
+            SetBlipSprite(StoreBlip, 567)
+            SetBlipScale(StoreBlip, 0.6)
+            SetBlipDisplay(StoreBlip, 4)
+            SetBlipColour(StoreBlip, 27)
+            SetBlipAsShortRange(StoreBlip, true)
+            BeginTextCommandSetBlipName("STRING")
+            AddTextComponentSubstringPlayerName("Reparar Armas")
+            EndTextCommandSetBlipName(StoreBlip)
         end
     end)
 end)
@@ -140,7 +149,7 @@ CreateThread(function()
             local weapon = GetSelectedPedWeapon(ped)
             local ammo = GetAmmoInPedWeapon(ped, weapon)
             TriggerServerEvent("weapons:server:UpdateWeaponAmmo", CurrentWeaponData, tonumber(ammo))
-            if MultiplierAmount > 0 then
+            if MultiplierAmount > 10 then
                 TriggerServerEvent("weapons:server:UpdateWeaponQuality", CurrentWeaponData, MultiplierAmount)
                 MultiplierAmount = 0
             end
