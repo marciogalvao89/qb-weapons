@@ -19,6 +19,17 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
             BeginTextCommandSetBlipName("STRING")
             AddTextComponentSubstringPlayerName("Reparar Armas")
             EndTextCommandSetBlipName(StoreBlip)
+			
+			
+			ped = CreatePed(7, "s_m_m_ammucountry", data.coords.x, data.coords.y, data.coords.z, data.heading, false, false)
+			SetEntityCoordsNoOffset(ped, data.coords.x, data.coords.y, data.coords.z)
+			FreezeEntityPosition(ped, true)
+			SetEntityInvincible(ped, true)
+			SetBlockingOfNonTemporaryEvents(ped, true)
+			TaskStartScenarioInPlace(ped, "WORLD_HUMAN_COP_IDLES", 0, true)
+			
+			
+			
         end
     end)
 end)

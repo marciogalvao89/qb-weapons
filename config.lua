@@ -1,6 +1,6 @@
 Config = Config or {}
 
-Config.ReloadTime = math.random(1000, 4000)
+Config.ReloadTime = math.random(1000, 2000)
 
 Config.DurabilityBlockedWeapons = {
     "weapon_stungun",
@@ -141,6 +141,19 @@ Config.DurabilityMultiplier = {
 Config.WeaponRepairPoints = {
     [1] = {
         coords = vector3(1580.02, 3566.41, 35.36),
+		heaight = 69.0,
+        IsRepairing = false,
+        RepairingData = {},
+    },
+	[2] = {
+        coords = vector3(238.02, -815.41, 30.2),
+		heaight = 69.0,
+        IsRepairing = false,
+        RepairingData = {},
+    },
+	[3] = {
+        coords = vector3(-458.02, 5989.41, 31.31),
+		heaight = 349.0,
         IsRepairing = false,
         RepairingData = {},
     }
