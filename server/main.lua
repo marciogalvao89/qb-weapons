@@ -83,7 +83,7 @@ QBCore.Functions.CreateCallback("weapons:server:RepairWeapon", function(source, 
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local minute = 60 * 1000
-    local Timeout = math.random(5 * minute, 10 * minute)
+    local Timeout = math.random(1 * minute, 2 * minute)
     local WeaponData = QBCore.Shared.Weapons[GetHashKey(data.name)]
     local WeaponClass = (QBCore.Shared.SplitStr(WeaponData.ammotype, "_")[2]):lower()
 
